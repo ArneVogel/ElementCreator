@@ -1,0 +1,135 @@
+
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --blue: #4d41c6;
+  --text-blue: #cdd7ec;
+  --x: 1em;
+  --half-x: 0.5em;
+  --normal-border: 3px;
+  --normal-radius: 11px;
+  --normal-shadow: 6px;
+  --mobile: 800px;
+}
+
+textarea {
+    width: 100%;
+}
+
+hr {
+    border: 1px solid var(--black);
+}
+
+html {
+    color: var(--black);
+    font-family: sans-serif;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    max-width: min(80ch, 100%);
+    margin: 0 auto;
+    padding: 1em;
+}
+.wide-wrapper {
+    max-width: 95%;
+    width: 80em;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.wide-color {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.background-blue {
+    background: var(--blue);
+    color: var(--white);
+}
+.background-text-blue {
+    background: var(--text-blue);
+    color: var(--black);
+}
+
+
+.flexed {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.half {
+    margin: var(--x);
+}
+
+@media screen and (min-width: 800px) {
+    .half {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .half {
+        width: 90%;
+    }
+}
+
+#output {
+    border: var(--normal-border) solid var(--black);
+    height: 20em;
+    padding: 1em;
+    overflow: scroll;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+button {
+    cursor: pointer;
+    font-weight: bolder;
+    margin-right: var(--x);
+    padding: var(--half-x) var(--x);
+    border: var(--normal-border) solid var(--black);
+    border-radius: var(--normal-radius);
+    background: var(--white);
+    color: var(--black);
+    box-shadow: var(--normal-shadow) var(--normal-shadow) var(--black);
+}
+
+button.disabled {
+    color: var(--gray);
+}
+
+button.disabled:hover {
+    transform: unset;
+    box-shadow: var(--normal-shadow) var(--normal-shadow) var(--black);
+    cursor: not-allowed;
+}
+
+button:hover {
+    transform: translate(var(--normal-shadow), var(--normal-shadow));
+    box-shadow: 0px 0px;
+}
+
+.hide {
+    display: none;
+}
+
+.copied {
+    position: absolute;
+    z-index: 90;
+    background: var(--white);
+    top: 20px;
+    left: 45%;
+    padding: var(--x);
+    border: var(--normal-border) solid var(--black);
+}

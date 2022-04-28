@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>createElement</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <div id="copied" class="hide copied">
+        Copied to clipboard!
+    </div>
+    <div class="wide-color background-blue">
+        <div class="wrapper">
+            <h1>Element Creator</h1>
+            <p>Generate javascript to create the html for you.</p>
+        </div>
+    </div>
+    <div class="wide-wrapper">
+        <div class="flexed">
+        <div class="half">
+  <textarea id="html-input" name="html-input"
+                            rows="20">
+<div id="wrapper" class="flex">
+    <div class="flexed">
+        <p>This is a test</p>
+    </div>
+    <div class="flexed">
+        <button>Click on generate</button>
+    </div>
+</div>
+  </textarea>
+        </div>
+        <div class="half">
+          <div id="output">
+          </div>
+        </div>
+        </div>
+  <br>
+  <button id="generate" onClick="generate()">Generate</button>
+  <button id="copy" onClick="copy()">Copy JavaScript</button>
+    </div>
+      <div class="wide-color background-text-blue">
+        <div class="wrapper">
+            <h2>What is this?</h2>
+            <p>Creating HTML with JavaScript can be done in two different ways. Fast and possibly dangerous, or more labor intensive but safe by using the right APIs.</p>
+            <p>Let's be honest which is more convenient to write?</p>
+            <p><code>document.getElementById("something").innerHTML += "&lt;div>${some_variable}&lt;/div>"</code></p>
+            <p>Or</p>
+            <code>
+                let div = document.createElement("div");<br>
+                div.textContent = some_variable;<br>
+                document.getElementById("something").appendChild(div);
+            </code>
+            <p>The first way is easier to write, but also vulnerable to <a href="https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting">XSS</a>.</p>
+            <p>Especially when the HTML you want to create gets more complicated, the effort to create it with JavaScript using the secure APIs is much harder.</p>
+            <p>This is why I created ElementCreator. With ElementCreator you can simply write the HTML you want to create, and the tool automatically creates the JavaScript code to generate the HTML.</p>
+            <h2>No Warranty</h2>
+            <p>I assume that the generated code is safe, but of course I cannot guarantee this. Mistakes are human. ElementCreator is licensed under MIT license. As such it comes with no warranty.</p>
+            <h2>Contribute</h2>
+            <p>Have you found a bug or otherwise want to contribute? <a href="https://github.com/ArneVogel/ElementCreator">ElementCreator on Github</a></p>
+        </div>
+    </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
